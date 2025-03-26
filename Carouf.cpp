@@ -1,20 +1,32 @@
 #include <iostream>
 #include "Produit.h"
+#include "Client.h"
+#include "Categorie.h"
 
 int main() {
+    Categorie ca1("Alimentaire");
+    Categorie ca2("Boisson");
+    Categorie ca3("Maison");
+    Categorie ca4("Produits d'entretien");
 
-    Produit p1("Yaourt", "Y123", "Alimentaire");
-    Produit p2("Eau", "E456", "Boisson");
+    Produit p1("Yaourt", "Y123", &ca1); // &ca1 est l'adresse mémoire de ca1
+    Produit p2("Eau", "E456", &ca2);
 
-    p1.afficher();
-    p2.afficher();
+    Client c1("Dupont", "Jean");
 
     p1.SetPrixVente(1.8);
-    p1.SetStockRayon(25);
+    p2.SetPrixFournisseur(0.9);
 
-    std::cout << "\nAprès modification du prix et du stock en rayon :\n";
+    std::cout << "\nInformations des produits:\n\n";
+    p1.Afficher();
+    p2.Afficher();
 
-    p1.afficher();
+    int MontantAchat = 25;
+    c1.AjouterPoints(MontantAchat);
+    c1.SetAdresse("12 rue ouioui");
+
+    std::cout << "\nInformations du client:\n\n";
+    c1.AfficherClient();
 
     return 0;
 }
