@@ -3,9 +3,9 @@
 Categorie::Categorie(std::string n) : nom(n) {}
 
 void Categorie::Afficher() const {
-    std::cout << "Catégorie : " << nom << std::endl;
+    std::cout << "Catégorie : " << nom << "\n";
 }
 
-std::string Categorie::NomCat() const {
+std::string Categorie::GetCategorie() const {
     return nom;
 }

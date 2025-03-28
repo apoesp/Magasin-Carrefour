@@ -8,5 +8,5 @@ private:
 public:
     Categorie(std::string n);
     void Afficher() const;
-    std::string NomCat() const;
+    std::string GetCategorie() const;
 };

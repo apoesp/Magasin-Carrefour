@@ -8,7 +8,7 @@ void Client::AjouterPoints(int montantAchat) {
 
 void Client::SetAdresse(std::string a) { adresse = a; }
 
-void Client::AfficherClient() {
+void Client::AfficherClient() const {
     std::cout << "Client: " << prenom << " " << nom << "\n";
     std::cout << "Adresse: " << adresse << "\n";
     std::cout << "Points de fidélité: " << pointsfidelite << "\n\n";

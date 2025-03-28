@@ -2,6 +2,7 @@
 #include "Produit.h"
 #include "Client.h"
 #include "Categorie.h"
+#include "Livraison.h"
 
 int main() {
     Categorie ca1("Alimentaire");
@@ -27,6 +28,9 @@ int main() {
 
     std::cout << "\nInformations du client:\n\n";
     c1.AfficherClient();
+
+    Livraison livraison("Simpl", "2025-03-28", p1, 100, 80);
+    livraison.VerifierLivraison();
 
     return 0;
 }

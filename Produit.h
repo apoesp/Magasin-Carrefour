@@ -25,4 +25,8 @@ public:
     void SetStockRayon(int sra);
 
     void Afficher() const;
+    std::string GetNomProduit() const;
+    std::string GetIDProduit() const;
+
+
 };

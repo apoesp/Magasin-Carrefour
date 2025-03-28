@@ -12,5 +12,5 @@ public:
     Client(std::string n, std::string p);
     void SetAdresse(std::string a);
     void AjouterPoints(int MontantAchat);
-    void AfficherClient();
+    void AfficherClient() const;
 };
