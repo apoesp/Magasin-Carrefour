@@ -29,7 +29,11 @@ int main() {
     std::cout << "\nInformations du client:\n\n";
     c1.AfficherClient();
 
-    Livraison livraison("Simpl", "2025-03-28", p1, 100, 80);
+    std::vector<Produit> ProduitsLivres = { p1, p2 };
+    std::vector<int> QuantitesAttendues = { 100, 50 }; 
+    std::vector<int> QuantitesLivrees = { 80, 50 }; 
+
+    Livraison livraison("Simpl", "2025-03-28", ProduitsLivres, QuantitesAttendues, QuantitesLivrees);
     livraison.VerifierLivraison();
 
     return 0;

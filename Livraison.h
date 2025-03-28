@@ -1,16 +1,17 @@
 #pragma once
 #include <string>
 #include "Produit.h"
+#include <vector>
 
 class Livraison {
 private:
     std::string fournisseur;
     std::string date;
-    Produit produit;
-    int QuantiteAttendue;
-    int QuantiteLivree;
+    std::vector<Produit> ProduitsLivrees;
+    std::vector<int> QuantitesAttendues;
+    std::vector<int> QuantitesLivrees;
 
 public:
-    Livraison(std::string f, std::string d, Produit p, int qa, int ql);
+    Livraison(std::string f, std::string d, std::vector<Produit> p, std::vector<int> qa, std::vector<int> ql);
     void VerifierLivraison();
 };
