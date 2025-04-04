@@ -2,11 +2,11 @@
 #include <vector>
 #include "Client.h"
 #include "Produit.h"
-#include <ctime>
+#include "Date.h"
 
 class Vente {
 private:
-    std::string dateVente;
+    Date dateVente;
     Client* client;
     std::vector<Produit*> produits;
     std::vector<int> quantites;
@@ -14,7 +14,7 @@ private:
     int pointsfidelite = 0;
 
 public:
-    Vente(Client* c, std::vector<Produit*> p, std::vector<int> q);
+    Vente(Client* c, std::vector<Produit*> p, std::vector<int> q, Date date);
     void CalculerMontant();
     void AfficherVente() const;
 };

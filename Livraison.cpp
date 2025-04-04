@@ -1,11 +1,13 @@
 #include "Livraison.h"
 #include <iostream>
 
-Livraison::Livraison(std::string f, std::string d, std::vector<Produit*> p, std::vector<int> qa, std::vector<int> ql)
-    : fournisseur(f), date(d), ProduitsLivrees(p), QuantitesAttendues(qa), QuantitesLivrees(ql) {}
+Livraison::Livraison(std::string f, Date d, std::vector<Produit*> p, std::vector<int> qa, std::vector<int> ql)
+    : fournisseur(f), dateLivraison(d), ProduitsLivrees(p), QuantitesAttendues(qa), QuantitesLivrees(ql) {}
 
 void Livraison::VerifierLivraison() {
-    std::cout << "Information des livraisons:\n\n" << "Fournisseur: " << fournisseur << "\nDate: " << date << "\n\n";
+    std::cout << "Information des livraisons:\n\n" << "Fournisseur: " << fournisseur << "\nDate: ";
+    dateLivraison.AfficherDate();
+    std::cout << "\n\n";
 
     for (size_t i = 0; i < ProduitsLivrees.size(); i++) { 
 

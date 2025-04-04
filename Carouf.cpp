@@ -14,6 +14,8 @@ int main() {
     Produit p1("Yaourt", "Y123", &ca1); // &ca1 est l'adresse mémoire de ca1
     Produit p2("Eau", "E456", &ca2);
 
+    Date date("04", "04", "2025", "14", "30", "00");
+
     Client c1("Dupont", "Jean");
 
     p1.SetPrixVente(1.8);
@@ -29,7 +31,7 @@ int main() {
     std::vector<int> QuantitesAttendues = { 100, 50 };
     std::vector<int> QuantitesLivrees = { 80, 50 };
 
-    Livraison livraison("Simpl", "2025-03-28", ProduitsLivres, QuantitesAttendues, QuantitesLivrees);
+    Livraison livraison("Simpl", date, ProduitsLivres, QuantitesAttendues, QuantitesLivrees);
     livraison.VerifierLivraison();
 
    
@@ -41,9 +43,8 @@ int main() {
 
     std::vector<Produit*> produitsachat = { &p1, &p2 };
     std::vector<int> quantitesAchat = { 3, 1 };
-
     
-    Vente vente(&c1, produitsachat, quantitesAchat);
+    Vente vente(&c1, produitsachat, quantitesAchat, date);
     vente.AfficherVente(); 
 
 
@@ -55,7 +56,9 @@ int main() {
     std::vector<Produit*> produitsachatInconnu = { &p1 };
     std::vector<int> quantitesAchatInconnu = { 2 };
 
-    Vente ventennfid(clientInconnu, produitsachatInconnu, quantitesAchatInconnu);
+
+
+    Vente ventennfid(clientInconnu, produitsachatInconnu, quantitesAchatInconnu, date);
     ventennfid.AfficherVente();
     p1.Afficher();
 
