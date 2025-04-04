@@ -7,6 +7,8 @@ Vente::Vente(Client* c, std::vector<Produit*> p, std::vector<int> q, Date date)
 }
 
 void Vente::CalculerMontant() {
+    std::cout << "\n\nDétail de la vente: \n\nTicket de caisse: ";
+
     for (size_t i = 0; i < produits.size(); ++i) {
         Produit* produit = produits[i];
         int quantite = quantites[i];
@@ -29,7 +31,6 @@ void Vente::CalculerMontant() {
 }
 
 void Vente::AfficherVente() const {
-    std::cout << "\nDétails de la vente :\n\n";
 
     if (client != nullptr) {
         std::cout << "Client : " << client->GetNom() << " " << client->GetPrenom() << "\n";

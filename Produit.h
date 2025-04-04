@@ -21,7 +21,10 @@ public:
     void SetPrixVente(double pv);
     void SetPrixFournisseur(double pf);
     void SetConservation(std::string cons);
-    void SetStockRayon(int sra);
+    void SetStockReserve(int ql);
+    void SetStockRayon(int q);
+
+    void ReserveToRayon(int sra);
 
     void Afficher() const;
     std::string GetNomProduit() const;
@@ -31,7 +34,5 @@ public:
     double GetPrixVente() const;
     double GetPrixFournisseur() const;
 
-    void MettreAJourStock(int ql);
-    void MettreEnRayon(int q);
 
 };

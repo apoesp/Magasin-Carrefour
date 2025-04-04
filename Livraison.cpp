@@ -15,7 +15,7 @@ void Livraison::VerifierLivraison() {
         // C'est un type spécial, c'est un nombre toujours positif et adapté à la taille du tableau. 
         // Ça marche mieux qu'un int, car la taille d'une liste ne peut jamais être négative.
         
-        ProduitsLivrees[i]->MettreAJourStock(QuantitesLivrees[i]);
+        ProduitsLivrees[i]->SetStockReserve(QuantitesLivrees[i]);
 
         std::cout << "Produit: " << ProduitsLivrees[i]->GetNomProduit() << "," << ProduitsLivrees[i]->GetIDProduit()
             << "\nAttendu: " << QuantitesAttendues[i]
