@@ -14,6 +14,11 @@ public:
     Client(std::string n, std::string p);
     void SetAdresse(std::string a);
     void AfficherClient() const;
-    void AchatProduit(std::vector<Produit*> produits, std::vector<int> quantites);
+    void AjouterPoints(int points);
+    std::string GetNom() const { return nom; }
+    std::string GetPrenom() const { return prenom; }
+    int GetPointsFidelite() const { return pointsfidelite; }
 
 };
+
+

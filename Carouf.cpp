@@ -3,6 +3,7 @@
 #include "Client.h"
 #include "Categorie.h"
 #include "Livraison.h"
+#include "Vente.h" 
 
 int main() {
     Categorie ca1("Alimentaire");
@@ -25,26 +26,38 @@ int main() {
     c1.AfficherClient();
 
     std::vector<Produit*> ProduitsLivres = { &p1, &p2 };
-    std::vector<int> QuantitesAttendues = { 100, 50 }; 
-    std::vector<int> QuantitesLivrees = { 80, 50 }; 
+    std::vector<int> QuantitesAttendues = { 100, 50 };
+    std::vector<int> QuantitesLivrees = { 80, 50 };
 
     Livraison livraison("Simpl", "2025-03-28", ProduitsLivres, QuantitesAttendues, QuantitesLivrees);
     livraison.VerifierLivraison();
 
-    std::cout << "\nStock après livraison:\n";
+   
     p2.Afficher();
 
     std::cout << "\nStock après la mise en rayon:\n";
     p1.MettreEnRayon(7);
     p1.Afficher();
 
-    std::vector<Produit*> produitsachat = { &p1 , &p2};
-    std::vector<int> quantitesAchat = { 3 , 1};
+    std::vector<Produit*> produitsachat = { &p1, &p2 };
+    std::vector<int> quantitesAchat = { 3, 1 };
 
-    c1.AchatProduit(produitsachat, quantitesAchat);
+    
+    Vente vente(&c1, produitsachat, quantitesAchat);
+    vente.AfficherVente(); 
+
 
     p1.Afficher();
     c1.AfficherClient();
+
+
+    Client* clientInconnu = nullptr;
+    std::vector<Produit*> produitsachatInconnu = { &p1 };
+    std::vector<int> quantitesAchatInconnu = { 2 };
+
+    Vente ventennfid(clientInconnu, produitsachatInconnu, quantitesAchatInconnu);
+    ventennfid.AfficherVente();
+    p1.Afficher();
 
     return 0;
 }

@@ -29,6 +29,7 @@ public:
     int GetStockReserve() const;
     int GetStockRayon() const;
     double GetPrixVente() const;
+    double GetPrixFournisseur() const;
 
     void MettreAJourStock(int ql);
     void MettreEnRayon(int q);

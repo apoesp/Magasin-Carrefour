@@ -45,6 +45,11 @@ double Produit::GetPrixVente() const
     return prixvente;
 }
 
+double Produit::GetPrixFournisseur() const
+{
+    return prixfournisseur;
+}
+
 void Produit::MettreAJourStock(int ql) {
     stockreserve = ql;
     

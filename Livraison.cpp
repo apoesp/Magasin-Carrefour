@@ -21,9 +21,14 @@ void Livraison::VerifierLivraison() {
 
         if (QuantitesLivrees[i] < QuantitesAttendues[i]) {
             std::cout << "Il manque " << (QuantitesAttendues[i] - QuantitesLivrees[i]) << " unités. Il faut programmer une nouvelle livraison.\n\n";
+            PlanifierLivraisonManquante();
         }
         else {
             std::cout << "Livraison complète.\n";
         }
     }
+}
+
+void Livraison::PlanifierLivraisonManquante() {
+    std::cout << "Livraison manquante programmée.\n\n";
 }

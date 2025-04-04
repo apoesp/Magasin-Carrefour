@@ -14,4 +14,5 @@ private:
 public:
     Livraison(std::string f, std::string d, std::vector<Produit*> p, std::vector<int> qa, std::vector<int> ql);
     void VerifierLivraison();
+    void PlanifierLivraisonManquante();
 };
